@@ -30,42 +30,40 @@
         <q-btn @click="sort_by='new'" class="q-pl-sm q-pr-md text-bold" :class="{'tw-bg-gradient-to-r tw-from-cyan-500 tw-to-blue-500 text-white':sort_by=='new','bg-grey-4':sort_by!='new'}" unelevated rounded label="new" no-caps icon="auto_awesome" />
         <q-btn @click="sort_by='popular'" class="q-pl-sm q-pr-md text-bold" :class="{'tw-bg-gradient-to-r tw-from-orange-500 tw-to-red-500 text-white':sort_by=='popular','bg-grey-4':sort_by!='popular'}" unelevated rounded label="popular" no-caps icon="local_fire_department" />
       </div>
-      <div class="tw-mx-auto tw-mt-12 tw-grid tw-max-w-lg tw-gap-2 md:tw-gap-8 lg:tw-max-w-none lg:tw-grid-cols-3 q-pa-sm">
-        <div v-for="post in posts" :key="post.title" class="tw-flex tw-flex-col tw-overflow-hidden tw-rounded-lg tw-shadow-lg">
+      <div class="tw-mx-auto tw-mt-12 tw-max-w-lg tw-gap-2 sm:tw-gap-8 md:tw-gap-16 tw-grid lg:tw-grid-cols-3 lg:tw-max-w-none  q-pa-sm">
+        <div v-for="post in posts" :key="post.title" class="tw-flex tw-flex-col tw-overflow-hidden tw-rounded-lg tw-shadow-lg" @click="$router.push({name:'tool',params:{tool_name:'mydevtools'},query:{filter:'popular'}})">
           <div class="tw-flex-shrink-0">
             <img class="tw-h-48 tw-w-full tw-object-cover hover:tw-scale-110 tw-transition tw-ease-in-out" :src="post.imageUrl" alt="" />
           </div>
           <div class="tw-flex tw-flex-1 tw-flex-col tw-justify-between tw-bg-white tw-p-6">
             <div class="tw-flex-1">
-              <a :href="post.href" class="tw-mt-2 tw-block">
-                <p class="tw-text-xl tw-font-semibold tw-text-gray-900">{{ post.title }}</p>
+              <div class="tw-mt-2 tw-block">
+                <p class="tw-text-xl tw-font-semibold tw-text-gray-900 flex items-center tw-gap-2 flex justify-between">
+                  <span>{{ post.title }} <q-icon name="verified" color="light-blue-6" /></span>
+                  <span class="flex justify-center cursor-inherit">
+                    <q-tooltip>120 people favorited this tool</q-tooltip>
+                    <q-icon name="book" color="blue-grey-4"/> 
+                    <span class="tw-text-sm text-blue-grey-4">120</span>
+                  </span>
+                  
+                </p>
                 <p class="tw-mt-3 tw-text-base tw-text-gray-500">{{ post.description }}</p>
-              </a>
+              </div>
+            </div>
+            <div class="tw-mt-6">
+              <a href="/tags" class=" text-blue-7" >#text</a>
             </div>
             <div class="tw-mt-6 tw-flex tw-items-center tw-justify-center">
               <q-btn flat icon="open_in_new" class="tw-flex-grow bg-light-blue-6 text-white">
                 <span class="q-px-sm">Open</span>
               </q-btn>
-              <div class="q-px-xs"></div>
-              <q-btn outline icon="bookmark_add" color="pink-6" class="tw-flex-grow">
+              <div class="q-px-sm q-mx-xs"></div>
+              <q-btn outline icon="bookmark_add" color="light-blue-6" class="tw-flex-grow">
                 <span class="q-px-sm text-bold">Save</span>
               </q-btn>
-              <!-- <div class="tw-flex-shrink-0">
-                <a :href="post.author.href">
-                  <span class="tw-sr-only">{{ post.author.name }}</span>
-                  <img class="tw-h-10 tw-w-10 tw-rounded-full" :src="post.author.imageUrl" alt="" />
-                </a>
-              </div>
-              <div class="tw-ml-3">
-                <p class="tw-text-sm tw-font-medium tw-text-gray-900">
-                  <a :href="post.author.href" class="hover:tw-underline">{{ post.author.name }}</a>
-                </p>
-                <div class="tw-flex tw-space-x-1 tw-text-sm tw-text-gray-500">
-                  <time :datetime="post.datetime">{{ post.date }}</time>
-                  <span aria-hidden="true">&middot;</span>
-                  <span>{{ post.readingTime }} read</span>
-                </div>
-              </div> -->
+              <!-- <q-btn outline icon="bookmark_remove" color="light-blue-6" class="tw-flex-grow">
+                <span class="q-px-sm text-bold">Remove</span>
+              </q-btn> -->
             </div>
           </div>
         </div>
