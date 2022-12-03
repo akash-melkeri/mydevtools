@@ -3,8 +3,8 @@
     <q-header bordered class="tw-bg-white text-black flex justify-center" >
       <div class="tw-container" >
         <q-toolbar class="">
-          <q-img src="dev_icon.svg" class="tw-h-10 tw-w-10" />
-          <q-toolbar-title class="text-bold">
+          <q-img src="dev_icon.svg" class="tw-h-10 tw-w-10 cursor-pointer" @click="$router.push('/sd')" />
+          <q-toolbar-title class="text-bold cursor-pointer" @click="$router.push('/')">
             MyDevTools
           </q-toolbar-title>
 
