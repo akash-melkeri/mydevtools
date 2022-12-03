@@ -3,15 +3,27 @@
     <q-header bordered class="tw-bg-white text-black flex justify-center" >
       <div class="tw-container" >
         <q-toolbar class="">
-          <q-img src="dev_icon.svg" class="tw-h-10 tw-w-10 cursor-pointer" @click="$router.push('/')" />
-          <q-toolbar-title class="text-bold cursor-pointer" @click="$router.push('/')">
+          <q-btn icon="menu" flat class="q-px-sm sm:tw-hidden" >
+            <q-menu>
+              <q-list style="min-width: 100px">
+                <q-item v-for="item in navigation.main" :key="item.name" clickable v-close-popup>
+                  <q-item-section avatar>
+                    <q-icon color="black" :name="item.icon" />
+                  </q-item-section>
+                  <q-item-section @click="$router.push(item.href)">{{item.name}}</q-item-section>
+                </q-item>
+              </q-list>
+            </q-menu>
+          </q-btn>
+          <q-img src="dev_icon.svg" class="tw-h-10 tw-w-10 cursor-pointer tw-hidden sm:tw-inline-block" @click="$router.push('/')" />
+          <q-toolbar-title class="text-bold cursor-pointer sm:tw-hidden md:tw-inline-block" @click="$router.push('/')">
             MyDevTools
           </q-toolbar-title>
 
-          <a href="/your-favourites" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg">Your Favourites</a>
-          <a href="/discover" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg">Discover</a>
-          <a href="/submit" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg">Submit</a>
-          <a href="/blog" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg">Blog</a>
+          <a href="/your-favourites" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Your Favourites</a>
+          <a href="/discover" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Discover</a>
+          <a href="/submit" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Submit</a>
+          <a href="/blog" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Blog</a>
           <q-btn rounded class="tw-text-md q-py-none q-px-sm q-my-none bg-white" text-color="black" no-caps  >
             <img src="google.svg" class="tw-h-6 tw-w-6 q-mr-sm" />
             <span class="text-bold">Login</span>
@@ -49,10 +61,10 @@ const navigation = {
 
 
 main: [
-  { name: 'Your Favourites', href: '/your-favourites' },
-  { name: 'Discover', href: '/discover' },
-  { name: 'Submit Your Tools', href: '/submit' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Your Favourites', href: '/your-favourites',icon:'favorite' },
+  { name: 'Discover', href: '/discover', icon:'explore' },
+  { name: 'Submit Your Tools', href: '/submit',icon:'add_circle' },
+  { name: 'Blog', href: '/blog',icon:'history_edu' },
 ],
 social: [
   {
