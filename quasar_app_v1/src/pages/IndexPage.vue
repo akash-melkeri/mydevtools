@@ -8,7 +8,7 @@
       </div>
       <div class="flex tw-flex-col md:tw-flex-row tw-gap-2 md:tw-gap-4">
         <q-select rounded outlined v-model="category" class="bg-white tw-rounded-full"
-          input-class="q-pa-md" style="min-width:10rem;" label="Category" :options="category_options">
+          style="min-width:10rem;" label="Category" :options="category_options">
           <template v-slot:option="scope">
             <q-item v-bind="scope.itemProps">
               <q-item-section>
@@ -18,7 +18,7 @@
             </q-item>
           </template>
         </q-select>
-        <q-input rounded outlined v-model="search" class="bg-white tw-rounded-full" input-class="q-pa-md" label="Search">
+        <q-input rounded outlined v-model="search" class="bg-white tw-rounded-full" label="Search">
           <template v-slot:append>
             <q-icon name="search" color="grey-5" />
           </template>
