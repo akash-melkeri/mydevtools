@@ -3,7 +3,7 @@
     <q-header bordered class="tw-bg-white text-black flex justify-center" >
       <div class="tw-container" >
         <q-toolbar class="">
-          <q-btn icon="menu" flat class="q-px-sm sm:tw-hidden" >
+          <q-btn icon="menu" flat class="q-px-xs sm:tw-hidden" >
             <q-menu>
               <q-list style="min-width: 100px">
                 <q-item v-for="item in navigation.main" :key="item.name" clickable v-close-popup>
