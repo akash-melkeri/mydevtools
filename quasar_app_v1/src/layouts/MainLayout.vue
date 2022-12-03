@@ -8,13 +8,13 @@
             MyDevTools
           </q-toolbar-title>
 
-          <a href="#" class="tw-text-lg text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg">Your Favourites</a>
-          <a href="#" class="tw-text-lg text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg">Discover</a>
-          <a href="#" class="tw-text-lg text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg">Submit</a>
-          <a href="#" class="tw-text-lg text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg">Blog</a>
-          <q-btn rounded class="tw-text-lg q-py-none q-px-sm q-my-none bg-white" text-color="black" no-caps  >
+          <a href="#" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg">Your Favourites</a>
+          <a href="#" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg">Discover</a>
+          <a href="#" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg">Submit</a>
+          <a href="#" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg">Blog</a>
+          <q-btn rounded class="tw-text-md q-py-none q-px-sm q-my-none bg-white" text-color="black" no-caps  >
             <img src="google.svg" class="tw-h-6 tw-w-6 q-mr-sm" />
-            <span>Login</span>
+            <span class="text-bold">Login</span>
           </q-btn>
         </q-toolbar>
       </div>
