@@ -5,6 +5,7 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
+      { name:"tool",path: 'tool/:tool_name', component: () => import('pages/Tool.vue') },
       {
         path: '/:catchAll(.*)*',
         component: () => import('pages/ErrorNotFound.vue')

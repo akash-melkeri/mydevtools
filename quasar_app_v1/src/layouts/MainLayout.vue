@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf" class="tw-bg-gray-100">
+  <q-layout view="lHh Lpr lff" class="tw-bg-gray-100">
     <q-header bordered class="tw-bg-white text-black flex justify-center" >
       <div class="tw-container" >
         <q-toolbar class="">
@@ -19,12 +19,12 @@
           <q-toolbar-title class="text-bold cursor-pointer sm:tw-hidden md:tw-inline-block" @click="$router.push('/')">
             MyDevTools
           </q-toolbar-title>
-
+          <div class="sm:tw-grow md:tw-hidden"></div>
           <a href="/your-favourites" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Your Favourites</a>
           <a href="/discover" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Discover</a>
           <a href="/submit" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Submit</a>
           <a href="/blog" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Blog</a>
-          <q-btn rounded class="tw-text-md q-py-none q-px-sm q-my-none bg-white" text-color="black" no-caps  >
+          <q-btn rounded class="tw-text-md q-py-none q-px-sm q-mx-sm bg-white" text-color="black" no-caps  >
             <img src="google.svg" class="tw-h-6 tw-w-6 q-mr-sm" />
             <span class="text-bold">Login</span>
           </q-btn>
