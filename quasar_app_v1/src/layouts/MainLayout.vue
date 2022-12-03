@@ -19,7 +19,7 @@
           <q-toolbar-title class="text-bold cursor-pointer sm:tw-hidden md:tw-inline-block" @click="$router.push('/')">
             MyDevTools
           </q-toolbar-title>
-
+          <div class="sm:tw-grow md:tw-hidden"></div>
           <a href="/your-favourites" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Your Favourites</a>
           <a href="/discover" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Discover</a>
           <a href="/submit" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Submit</a>
