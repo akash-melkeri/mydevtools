@@ -6,7 +6,7 @@
         <p class="text-subtitle1 text-bold text-center">THE LARGEST AI TOOLS DIRECTORY, UPDATED DAILY.</p>
         <p class="text-grey-9 text-center">9 tools added in last 24 hours.</p>
       </div>
-      <div class="flex tw-flex-col md:tw-flex-row tw-gap-2">
+      <div class="flex tw-flex-col md:tw-flex-row tw-gap-2 md:tw-gap-4">
         <q-select rounded outlined v-model="category" class="bg-white tw-rounded-full"
           input-class="q-pa-md" style="min-width:10rem;" label="Category" :options="category_options">
           <template v-slot:option="scope">
