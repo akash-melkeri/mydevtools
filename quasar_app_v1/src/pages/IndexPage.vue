@@ -30,23 +30,27 @@
         <q-btn @click="sort_by='new'" class="q-pl-sm q-pr-md text-bold" :class="{'tw-bg-gradient-to-r tw-from-cyan-500 tw-to-blue-500 text-white':sort_by=='new','bg-grey-4':sort_by!='new'}" unelevated rounded label="new" no-caps icon="auto_awesome" />
         <q-btn @click="sort_by='popular'" class="q-pl-sm q-pr-md text-bold" :class="{'tw-bg-gradient-to-r tw-from-orange-500 tw-to-red-500 text-white':sort_by=='popular','bg-grey-4':sort_by!='popular'}" unelevated rounded label="popular" no-caps icon="local_fire_department" />
       </div>
-      <div class="tw-mx-auto tw-mt-12 tw-grid tw-max-w-lg tw-gap-2 md:tw-gap-5 lg:tw-max-w-none lg:tw-grid-cols-3 q-pa-sm">
+      <div class="tw-mx-auto tw-mt-12 tw-grid tw-max-w-lg tw-gap-2 md:tw-gap-8 lg:tw-max-w-none lg:tw-grid-cols-3 q-pa-sm">
         <div v-for="post in posts" :key="post.title" class="tw-flex tw-flex-col tw-overflow-hidden tw-rounded-lg tw-shadow-lg">
           <div class="tw-flex-shrink-0">
-            <img class="tw-h-48 tw-w-full tw-object-cover" :src="post.imageUrl" alt="" />
+            <img class="tw-h-48 tw-w-full tw-object-cover hover:tw-scale-110 tw-transition tw-ease-in-out" :src="post.imageUrl" alt="" />
           </div>
           <div class="tw-flex tw-flex-1 tw-flex-col tw-justify-between tw-bg-white tw-p-6">
             <div class="tw-flex-1">
-              <p class="tw-text-sm tw-font-medium tw-text-indigo-600">
-                <a :href="post.category.href" class="hover:tw-underline">{{ post.category.name }}</a>
-              </p>
               <a :href="post.href" class="tw-mt-2 tw-block">
                 <p class="tw-text-xl tw-font-semibold tw-text-gray-900">{{ post.title }}</p>
                 <p class="tw-mt-3 tw-text-base tw-text-gray-500">{{ post.description }}</p>
               </a>
             </div>
-            <div class="tw-mt-6 tw-flex tw-items-center">
-              <div class="tw-flex-shrink-0">
+            <div class="tw-mt-6 tw-flex tw-items-center tw-justify-center">
+              <q-btn flat icon="open_in_new" class="tw-flex-grow bg-light-blue-6 text-white">
+                <span class="q-px-sm">Open</span>
+              </q-btn>
+              <div class="q-px-xs"></div>
+              <q-btn outline icon="bookmark_add" color="pink-6" class="tw-flex-grow">
+                <span class="q-px-sm text-bold">Save</span>
+              </q-btn>
+              <!-- <div class="tw-flex-shrink-0">
                 <a :href="post.author.href">
                   <span class="tw-sr-only">{{ post.author.name }}</span>
                   <img class="tw-h-10 tw-w-10 tw-rounded-full" :src="post.author.imageUrl" alt="" />
@@ -61,7 +65,7 @@
                   <span aria-hidden="true">&middot;</span>
                   <span>{{ post.readingTime }} read</span>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -76,15 +80,15 @@ const posts = [
 
 
   {
-    title: 'Boost your conversion rate',
+    title: 'Writesonic',
     href: '#',
     category: { name: 'Article', href: '#' },
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+      'Writesonic is an AI writer that creates SEO-friendly content for blogs, Facebook ads, Google ads, and Shopify for free. Our paraphrasing tool lets you rephrase entire articles instantly.',
     date: 'Mar 16, 2020',
     datetime: '2020-03-16',
     imageUrl:
-      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+      'https://www.futurepedia.io/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fu0v1th4q%2Fproduction%2Fbe837214bd8c2249f9c5ba8e9bb5c7c9cc158bf4-1680x876.png&w=1920&q=75',
     readingTime: '6 min',
     author: {
       name: 'Roel Aufderehar',
@@ -94,15 +98,15 @@ const posts = [
     },
   },
   {
-    title: 'How to use search engine optimization to drive sales',
+    title: 'Fliki',
     href: '#',
     category: { name: 'Video', href: '#' },
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
+      'Create videos from scripts or blog posts using realistic voices in 2 minutes!',
     date: 'Mar 10, 2020',
     datetime: '2020-03-10',
     imageUrl:
-      'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+      'https://www.futurepedia.io/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fu0v1th4q%2Fproduction%2F4dc642d29507d2e460bbcf47a815af9846729b70-1680x876.png&w=1920&q=75',
     readingTime: '4 min',
     author: {
       name: 'Brenna Goyette',
@@ -112,15 +116,15 @@ const posts = [
     },
   },
   {
-    title: 'Improve your customer experience',
+    title: 'Palette.fm',
     href: '#',
     category: { name: 'Case Study', href: '#' },
     description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+      'Colorize Black and White Pictures Automatic, no sign-up, and Free!',
     date: 'Feb 12, 2020',
     datetime: '2020-02-12',
     imageUrl:
-      'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+      'https://www.futurepedia.io/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fu0v1th4q%2Fproduction%2F1667d98352c37ae7d207a2e6fe99811f2845a535-1811x888.jpg&w=1920&q=75',
     readingTime: '11 min',
     author: {
       name: 'Daniela Metz',
@@ -137,7 +141,7 @@ export default defineComponent({
       posts,
       search:ref(''),
       category:ref('All'),
-      sort_by:ref('popular'),
+      sort_by:ref('verified'),
       category_options:[{
         label:'All',
         count:0,
