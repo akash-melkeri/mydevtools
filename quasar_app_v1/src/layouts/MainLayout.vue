@@ -36,7 +36,7 @@
             <component :is="item.icon" class="tw-h-6 tw-w-6" aria-hidden="true" />
           </a>
         </div>
-        <p class="tw-mt-8 tw-text-center tw-text-base tw-text-gray-400">&copy; 2020 Your Company, Inc. All rights reserved.</p>
+        <p class="tw-mt-8 tw-text-center tw-text-base tw-text-gray-400">&copy; 2022 MyDevTools, All rights reserved.</p>
       </div>
     </q-footer>
   </q-layout>
