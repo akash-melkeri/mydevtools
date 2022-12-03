@@ -1,44 +1,25 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          icon="menu"
-          aria-label="Menu"
-          @click="toggleLeftDrawer"
-        />
+  <q-layout view="lHh Lpr lFf" class="tw-bg-gray-100">
+    <q-header bordered class="tw-bg-white text-black flex justify-center" >
+      <div class="tw-container" >
+        <q-toolbar class="">
+          <q-img src="dev_icon.svg" class="tw-h-10 tw-w-10" />
+          <q-toolbar-title class="text-bold">
+            MyDevTools
+          </q-toolbar-title>
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
+          <a href="#" class="tw-text-lg text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg">Your Favourites</a>
+          <a href="#" class="tw-text-lg text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg">Discover</a>
+          <a href="#" class="tw-text-lg text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg">Submit</a>
+          <a href="#" class="tw-text-lg text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg">Blog</a>
+          <q-btn rounded class="tw-text-lg q-py-none q-px-sm q-my-none bg-white" text-color="black" no-caps  >
+            <img src="google.svg" class="tw-h-6 tw-w-6 q-mr-sm" />
+            <span>Login</span>
+          </q-btn>
+        </q-toolbar>
+      </div>
+      
     </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      show-if-above
-      bordered
-    >
-      <q-list>
-        <q-item-label
-          header
-        >
-          Essential Links
-        </q-item-label>
-
-        <EssentialLink
-          v-for="link in essentialLinks"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
-
     <q-page-container>
       <router-view />
     </q-page-container>
