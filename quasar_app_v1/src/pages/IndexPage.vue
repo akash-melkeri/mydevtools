@@ -13,7 +13,7 @@
             <q-item v-bind="scope.itemProps">
               <q-item-section>
                 <q-item-label>{{ scope.opt.label }}</q-item-label>
-                <q-item-label class="text-subtitle2 text-grey-7">{{ scope.opt.count }} tools</q-item-label>
+                <q-item-label class="text-subtitle2 text-grey-7">{{ scope.opt.count }} tool{{(scope.opt.count != 1)?'s':''}}</q-item-label>
               </q-item-section>
             </q-item>
           </template>
