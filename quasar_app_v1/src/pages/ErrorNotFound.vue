@@ -15,10 +15,10 @@
             <h1 class="tw-mt-2 tw-text-4xl tw-font-bold tw-tracking-tight tw-text-gray-900 sm:tw-text-5xl">Page not found.</h1>
             <p class="tw-mt-2 tw-text-base tw-text-gray-500">Sorry, we couldn’t find the page you’re looking for.</p>
             <div class="tw-mt-6">
-              <a href="#" @click="$router.go(-1)" class="tw-text-base tw-font-medium tw-text-indigo-600 hover:tw-text-indigo-500">
+              <p @click="$router.go(-1)" class="cursor-pointer tw-text-base tw-font-medium tw-text-indigo-600 hover:tw-text-indigo-500">
                 <span aria-hidden="true"> &larr;</span>
                 Go back
-              </a>
+              </p>
             </div>
           </div>
         </div>
