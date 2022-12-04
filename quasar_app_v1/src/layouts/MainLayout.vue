@@ -22,7 +22,7 @@
           <div class="sm:tw-grow md:tw-hidden"></div>
           <a href="/your-favourites" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Your Favourites</a>
           <a href="/discover" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Discover</a>
-          <a href="/submit" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Submit</a>
+          <a href="/submit-tool" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Submit</a>
           <a href="/blog" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Blog</a>
           <q-btn rounded class="tw-text-md q-py-none q-px-sm q-mx-sm bg-white" text-color="black" no-caps  >
             <img src="google.svg" class="tw-h-6 tw-w-6 q-mr-sm" />
@@ -59,11 +59,10 @@ import { defineComponent, ref,h } from 'vue'
 
 const navigation = {
 
-
 main: [
   { name: 'Your Favourites', href: '/your-favourites',icon:'favorite' },
   { name: 'Discover', href: '/discover', icon:'explore' },
-  { name: 'Submit Your Tools', href: '/submit',icon:'add_circle' },
+  { name: 'Submit Your Tools', href: '/submit-tool',icon:'add_circle' },
   { name: 'Blog', href: '/blog',icon:'history_edu' },
 ],
 social: [

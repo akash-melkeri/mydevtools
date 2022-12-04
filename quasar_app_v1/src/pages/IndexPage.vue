@@ -1,12 +1,12 @@
 <template>
   <q-page class="flex justify-center">
-    <div class="tw-container column items-center">
+    <div class="tw-container column items-center bg-white">
       <div class="column items-center q-py-lg">
         <h1 class="text-h3 text-bold q-py-sm q-pt-lg">MyDevTools</h1>
         <p class="text-subtitle1 text-bold text-center text-blue-10 q-pt-sm">THE LARGEST AI TOOLS DIRECTORY, UPDATED DAILY.</p>
         <p class="text-grey-9 text-center">9 tools added in last 24 hours.</p>
       </div>
-      <div class="tw-flex tw-flex-col md:tw-flex-row tw-gap-2 md:tw-gap-4">
+      <div class="tw-flex tw-flex-col md:tw-flex-row tw-gap-2 md:tw-gap-4 tw-mt-4">
         <q-select rounded outlined v-model="category" class="bg-white tw-rounded-full"
           style="min-width:8rem;" label="Category" :options="category_options">
           <template v-slot:option="scope">
@@ -20,17 +20,17 @@
         </q-select>
         <q-input rounded outlined v-model="search" class="bg-white tw-rounded-full" style="min-width:350px" label="Search">
           <template v-slot:append>
-            <q-icon name="search" color="grey-5" />
+            <q-icon name="search" class="tw-bg-gradient-to-r tw-from-purple-600 tw-via-pink-600 tw-to-blue-600 tw-bg-clip-text tw-text-transparent" />
           </template>
         </q-input>
       </div>
       <div class="tw-py-1 md:tw-py-2"></div>
-      <div class="tw-flex tw-flex-row tw-gap-2 tw-gap-4">
+      <div class="tw-flex tw-flex-row tw-gap-2 tw-gap-4 tw-mt-4">
         <q-btn @click="sort_by='verified'" class="q-pl-sm q-pr-md text-bold" :class="{'tw-bg-gradient-to-r tw-from-green-500 tw-to-emerald-500 text-white':sort_by=='verified','bg-grey-4':sort_by!='verified'}" unelevated rounded label="verified" no-caps icon="verified" />
         <q-btn @click="sort_by='new'" class="q-pl-sm q-pr-md text-bold" :class="{'tw-bg-gradient-to-r tw-from-cyan-500 tw-to-blue-500 text-white':sort_by=='new','bg-grey-4':sort_by!='new'}" unelevated rounded label="new" no-caps icon="auto_awesome" />
         <q-btn @click="sort_by='popular'" class="q-pl-sm q-pr-md text-bold" :class="{'tw-bg-gradient-to-r tw-from-orange-500 tw-to-red-500 text-white':sort_by=='popular','bg-grey-4':sort_by!='popular'}" unelevated rounded label="popular" no-caps icon="local_fire_department" />
       </div>
-      <div class="tw-mx-auto tw-mt-12 tw-max-w-lg tw-gap-2 sm:tw-gap-8 md:tw-gap-16 tw-grid lg:tw-grid-cols-3 lg:tw-max-w-none  q-pa-sm">
+      <div class="tw-mx-auto tw-mt-12 tw-max-w-lg tw-gap-2 sm:tw-gap-8 md:tw-gap-8 tw-grid lg:tw-grid-cols-3 lg:tw-max-w-none tw-px-4 md:tw-px-8">
         <div v-for="post in posts" :key="post.title" class="tw-flex tw-flex-col tw-overflow-hidden tw-rounded-lg tw-shadow-lg" @click="$router.push({name:'tool',params:{tool_name:'mydevtools'}})">
           <div class="tw-flex-shrink-0">
             <img class="tw-h-48 tw-w-full tw-object-cover hover:tw-scale-110 tw-transition tw-ease-in-out" :src="post.imageUrl" alt="" />
@@ -54,11 +54,11 @@
               <a href="/tags" class=" text-blue-7" >#text</a>
             </div>
             <div class="tw-mt-6 tw-flex tw-items-center tw-justify-center">
-              <q-btn flat icon="open_in_new" class="tw-flex-grow bg-light-blue-6 text-white">
+              <q-btn flat icon="open_in_new" class="tw-flex-grow tw-bg-gradient-to-r tw-from-cyan-500 tw-to-blue-500 text-white">
                 <span class="q-px-sm">Open</span>
               </q-btn>
               <div class="q-px-sm q-mx-xs"></div>
-              <q-btn outline icon="bookmark_add" color="light-blue-6" class="tw-flex-grow">
+              <q-btn outline icon="bookmark_add" color="light-blue-6" class="tw-flex-grow ">
                 <span class="q-px-sm text-bold">Save</span>
               </q-btn>
               <!-- <q-btn outline icon="bookmark_remove" color="light-blue-6" class="tw-flex-grow">
@@ -68,6 +68,7 @@
           </div>
         </div>
       </div>
+      <div class="tw-py-2 md:tw-py-4"></div>
     </div>
   </q-page>
 </template>
