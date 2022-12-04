@@ -9,6 +9,8 @@ const routes = [
       { path: 'discover', component: () => import('pages/Tool.vue') },
       { path: 'discover/:tool_name', component: () => import('pages/Tool.vue') },
       { path: 'submit-tool/', component: () => import('src/pages/SubmitTool.vue') },
+      { path: 'your-favourites/', component: () => import('src/pages/YourFavourites.vue') },
+      { path: 'blog/', component: () => import('src/pages/ComingSoon.vue') },
       {
         path: '/:catchAll(.*)*',
         component: () => import('pages/ErrorNotFound.vue')
