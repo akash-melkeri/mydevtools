@@ -6,6 +6,8 @@ const routes = [
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { name:"tool",path: 'tool/:tool_name', component: () => import('pages/Tool.vue') },
+      { path: 'discover/', component: () => import('pages/Tool.vue') },
+      { path: 'discover/:tool_name', component: () => import('pages/Tool.vue') },
       {
         path: '/:catchAll(.*)*',
         component: () => import('pages/ErrorNotFound.vue')

@@ -31,7 +31,7 @@
         <q-btn @click="sort_by='popular'" class="q-pl-sm q-pr-md text-bold" :class="{'tw-bg-gradient-to-r tw-from-orange-500 tw-to-red-500 text-white':sort_by=='popular','bg-grey-4':sort_by!='popular'}" unelevated rounded label="popular" no-caps icon="local_fire_department" />
       </div>
       <div class="tw-mx-auto tw-mt-12 tw-max-w-lg tw-gap-2 sm:tw-gap-8 md:tw-gap-16 tw-grid lg:tw-grid-cols-3 lg:tw-max-w-none  q-pa-sm">
-        <div v-for="post in posts" :key="post.title" class="tw-flex tw-flex-col tw-overflow-hidden tw-rounded-lg tw-shadow-lg" @click="$router.push({name:'tool',params:{tool_name:'mydevtools'},query:{filter:'popular'}})">
+        <div v-for="post in posts" :key="post.title" class="tw-flex tw-flex-col tw-overflow-hidden tw-rounded-lg tw-shadow-lg" @click="$router.push({name:'tool',params:{tool_name:'mydevtools'}})">
           <div class="tw-flex-shrink-0">
             <img class="tw-h-48 tw-w-full tw-object-cover hover:tw-scale-110 tw-transition tw-ease-in-out" :src="post.imageUrl" alt="" />
           </div>
