@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lff" class="tw-bg-gray-100">
+  <q-layout view="lHh Lpr lff" class="">
     <q-header bordered class="tw-bg-white text-black flex justify-center" >
       <div class="tw-container" >
         <q-toolbar class="">
@@ -35,7 +35,7 @@
     <q-page-container>
       <router-view />
     </q-page-container>
-    <q-footer bordered class="tw-bg-gray-100">
+    <q-footer bordered class="bg-white">
       <div class="tw-mx-auto tw-max-w-7xl tw-overflow-hidden tw-py-12 tw-px-4 sm:tw-px-6 lg:tw-px-8">
         <nav class="tw-mx-5 tw-my-2 tw-flex tw-flex-wrap tw-justify-center" aria-label="Footer">
           <div v-for="item in navigation.main" :key="item.name" class="tw-px-5 tw-py-2">
