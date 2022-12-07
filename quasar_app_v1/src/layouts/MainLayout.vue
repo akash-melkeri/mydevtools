@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lff" class="tw-bg-gray-100">
+  <q-layout view="lHh Lpr lff" class="">
     <q-header bordered class="tw-bg-white text-black flex justify-center" >
       <div class="tw-container" >
         <q-toolbar class="">
@@ -22,7 +22,7 @@
           <div class="sm:tw-grow md:tw-hidden"></div>
           <a href="/your-favourites" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Your Favourites</a>
           <a href="/discover" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Discover</a>
-          <a href="/submit" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Submit</a>
+          <a href="/submit-tool" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Submit</a>
           <a href="/blog" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Blog</a>
           <q-btn rounded class="tw-text-md q-py-none q-px-sm q-mx-sm bg-white" text-color="black" no-caps  >
             <img src="google.svg" class="tw-h-6 tw-w-6 q-mr-sm" />
@@ -35,7 +35,7 @@
     <q-page-container>
       <router-view />
     </q-page-container>
-    <q-footer bordered class="tw-bg-gray-100">
+    <q-footer bordered class="bg-white">
       <div class="tw-mx-auto tw-max-w-7xl tw-overflow-hidden tw-py-12 tw-px-4 sm:tw-px-6 lg:tw-px-8">
         <nav class="tw-mx-5 tw-my-2 tw-flex tw-flex-wrap tw-justify-center" aria-label="Footer">
           <div v-for="item in navigation.main" :key="item.name" class="tw-px-5 tw-py-2">
@@ -59,11 +59,10 @@ import { defineComponent, ref,h } from 'vue'
 
 const navigation = {
 
-
 main: [
   { name: 'Your Favourites', href: '/your-favourites',icon:'favorite' },
   { name: 'Discover', href: '/discover', icon:'explore' },
-  { name: 'Submit Your Tools', href: '/submit',icon:'add_circle' },
+  { name: 'Submit Your Tools', href: '/submit-tool',icon:'add_circle' },
   { name: 'Blog', href: '/blog',icon:'history_edu' },
 ],
 social: [

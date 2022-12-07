@@ -4,7 +4,7 @@
       <div class="flex justify-between items-center tw-w-full tw-px-4 md:tw-px-8 tw-mt-4 md:tw-mt-8">
         <q-btn flat icon="arrow_back_ios" label="Back" @click="$router.back()" />
         <div class="tw-flex tw-items-center tw-justify-center">
-          <q-btn flat icon="bookmark_add" class="tw-flex-grow bg-light-blue-6 text-white">
+          <q-btn flat icon="bookmark_add" class="tw-flex-grow tw-flex-grow tw-bg-gradient-to-r tw-from-cyan-500 tw-to-blue-500 text-white">
             <span class="q-px-sm tw-hidden md:tw-inline-block">Add to Favourites</span>
           </q-btn>
           <div class="q-px-sm q-mx-xs"></div>
@@ -106,7 +106,7 @@
               <a href="/tags" class=" text-blue-7" >#text</a>
             </div>
             <div class="tw-mt-6 tw-flex tw-items-center tw-justify-center">
-              <q-btn flat icon="open_in_new" class="tw-flex-grow bg-light-blue-6 text-white">
+              <q-btn flat icon="open_in_new" class="tw-flex-grow tw-flex-grow tw-bg-gradient-to-r tw-from-cyan-500 tw-to-blue-500 text-white">
                 <span class="q-px-sm">Open</span>
               </q-btn>
               <div class="q-px-sm q-mx-xs"></div>
