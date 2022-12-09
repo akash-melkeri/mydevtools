@@ -11,14 +11,15 @@
         </div>
         <div class="tw-py-16">
           <div class="tw-text-center">
-            <p class="tw-text-base tw-font-semibold tw-text-indigo-600">404</p>
-            <h1 class="tw-mt-2 tw-text-4xl tw-font-bold tw-tracking-tight tw-text-gray-900 sm:tw-text-5xl">Page not found.</h1>
-            <p class="tw-mt-2 tw-text-base tw-text-gray-500">Sorry, we couldn’t find the page you’re looking for.</p>
+            <h1 class="tw-mt-2 tw-text-4xl tw-font-bold tw-tracking-tight tw-text-gray-900 sm:tw-text-5xl">We're Coming Soon..</h1>
+            <p class="tw-mt-2 tw-text-base tw-text-gray-500">We're working on our new website. Join our newsletter and get notified.</p>
             <div class="tw-mt-6">
-              <p @click="$router.back()" class="cursor-pointer tw-text-base tw-font-medium tw-text-indigo-600 hover:tw-text-indigo-500">
-                <span aria-hidden="true"> &larr;</span>
-                Go back
-              </p>
+              <q-btn @click="$router.back()" unelevated class="tw-m-4 tw-p-1 tw-rounded-full tw-bg-gradient-to-r tw-from-rose-400 tw-via-fuchsia-500 tw-to-indigo-500">
+                <span class="tw-block tw-text-black tw-px-4 tw-py-2 tw-font-semibold tw-rounded-full tw-bg-white">Go Back</span>
+              </q-btn>
+              <q-btn unelevated class="tw-m-4 tw-p-1 tw-rounded-full tw-bg-gradient-to-r tw-from-rose-400 tw-via-fuchsia-500 tw-to-indigo-500">
+                <span class="tw-block tw-text-black tw-px-4 tw-py-2 tw-font-semibold tw-rounded-full text-white">Notify Me !</span>
+              </q-btn>
             </div>
           </div>
         </div>
