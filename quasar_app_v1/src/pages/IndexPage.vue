@@ -1,37 +1,31 @@
 <template>
   <q-page class="flex justify-center">
+<div class="tw-w-full">
+<div class="tw-relative tw-px-4 tw-py-16 sm:tw-px-6 sm:tw-py-24 lg:tw-py-32 lg:tw-px-8 tw-bg-gradient-to-r tw-from-purple-800 tw-to-indigo-700">
+            <h1 class="tw-text-center tw-text-4xl tw-font-bold tw-tracking-tight sm:tw-text-5xl lg:tw-text-6xl">
+              <span class="tw-block tw-text-white">Platform Hunt</span>
+            </h1>
+            <p class="tw-mx-auto tw-mt-6 tw-max-w-lg tw-text-center tw-text-xl tw-text-indigo-200 sm:tw-max-w-3xl">THE LARGEST AI TOOLS DIRECTORY, UPDATED DAILY.</p>
+          </div>
+
+        <!--<div class="tw-relative tw-shadow-xl sm:tw-overflow-hidden sm:tw-rounded-2xl">
+          <div class="tw-absolute tw-inset-0">
+            <div class="tw-absolute tw-inset-0 tw-bg-gradient-to-r tw-from-purple-800 tw-to-indigo-700 mix-blend-multiply"></div>
+          </div>
+          <div class="tw-relative tw-px-4 tw-py-16 sm:tw-px-6 sm:tw-py-24 lg:tw-py-32 lg:tw-px-8">
+            <h1 class="tw-text-center tw-text-4xl tw-font-bold tw-tracking-tight sm:tw-text-5xl lg:tw-text-6xl">
+              <span class="tw-block tw-text-white">Platform Hunt</span>
+            </h1>
+            <p class="tw-mx-auto tw-mt-6 tw-max-w-lg tw-text-center tw-text-xl tw-text-indigo-200 sm:tw-max-w-3xl">THE LARGEST AI TOOLS DIRECTORY, UPDATED DAILY.</p>
+          </div>
+        </div>-->
+
+
+</div>
     <div class="tw-container column items-center bg-white">
-      <div class="column items-center q-py-lg">
-        <h1 class="text-h3 text-bold q-py-sm q-pt-lg">MyDevTools</h1>
-        <p class="text-subtitle1 text-bold text-center text-blue-10 q-pt-sm">THE LARGEST AI TOOLS DIRECTORY, UPDATED DAILY.</p>
-        <p class="text-grey-9 text-center">9 tools added in last 24 hours.</p>
-      </div>
-      <div class="tw-flex tw-flex-col md:tw-flex-row tw-gap-2 md:tw-gap-4 tw-mt-4">
-        <q-select rounded outlined v-model="category" class="bg-white tw-rounded-full"
-          style="min-width:8rem;" label="Category" :options="category_options">
-          <template v-slot:option="scope">
-            <q-item v-bind="scope.itemProps">
-              <q-item-section>
-                <q-item-label>{{ scope.opt.label }}</q-item-label>
-                <q-item-label class="text-subtitle2 text-grey-7">{{ scope.opt.count }} tool{{(scope.opt.count != 1)?'s':''}}</q-item-label>
-              </q-item-section>
-            </q-item>
-          </template>
-        </q-select>
-        <q-input rounded outlined v-model="search" class="bg-white tw-rounded-full" style="min-width:350px" label="Search">
-          <template v-slot:append>
-            <q-icon name="search" class="tw-bg-gradient-to-r tw-from-purple-600 tw-via-pink-600 tw-to-blue-600 tw-bg-clip-text tw-text-transparent" />
-          </template>
-        </q-input>
-      </div>
       <div class="tw-py-1 md:tw-py-2"></div>
-      <div class="tw-flex tw-flex-row tw-gap-2 tw-gap-4 tw-mt-4">
-        <q-btn @click="sort_by='verified'" class="q-pl-sm q-pr-md text-bold" :class="{'tw-bg-gradient-to-r tw-from-green-500 tw-to-emerald-500 text-white':sort_by=='verified','bg-grey-4':sort_by!='verified'}" unelevated rounded label="verified" no-caps icon="verified" />
-        <q-btn @click="sort_by='new'" class="q-pl-sm q-pr-md text-bold" :class="{'tw-bg-gradient-to-r tw-from-cyan-500 tw-to-blue-500 text-white':sort_by=='new','bg-grey-4':sort_by!='new'}" unelevated rounded label="new" no-caps icon="auto_awesome" />
-        <q-btn @click="sort_by='popular'" class="q-pl-sm q-pr-md text-bold" :class="{'tw-bg-gradient-to-r tw-from-orange-500 tw-to-red-500 text-white':sort_by=='popular','bg-grey-4':sort_by!='popular'}" unelevated rounded label="popular" no-caps icon="local_fire_department" />
-      </div>
       <div class="tw-mx-auto tw-mt-12 tw-max-w-lg tw-gap-2 sm:tw-gap-8 md:tw-gap-8 tw-grid lg:tw-grid-cols-3 lg:tw-max-w-none tw-px-4 md:tw-px-8">
-        <div v-for="post in posts" :key="post.title" class="tw-flex tw-flex-col tw-overflow-hidden tw-rounded-lg tw-shadow-lg" @click="$router.push({name:'tool',params:{tool_name:'mydevtools'}})">
+        <!--<div v-for="post in posts" :key="post.title" class="tw-flex tw-flex-col tw-overflow-hidden tw-rounded-lg tw-shadow-lg" @click="$router.push({name:'tool',params:{tool_name:'mydevtools'}})">
           <div class="tw-flex-shrink-0">
             <img class="tw-h-48 tw-w-full tw-object-cover hover:tw-scale-110 tw-transition tw-ease-in-out" :src="post.imageUrl" alt="" />
           </div>
@@ -61,12 +55,47 @@
               <q-btn outline icon="bookmark_add" color="light-blue-6" class="tw-flex-grow ">
                 <span class="q-px-sm text-bold">Save</span>
               </q-btn>
-              <!-- <q-btn outline icon="bookmark_remove" color="light-blue-6" class="tw-flex-grow">
-                <span class="q-px-sm text-bold">Remove</span>
-              </q-btn> -->
             </div>
           </div>
+        </div>-->
+<div class="tw-ml-3 tw-max-w-xs tw-rounded-lg tw-overflow-hidden tw-border tw-border-gray tw-mr-16" v-for="post in posts" :key="post.title">
+<router-link :to="'/tool/'+post.title">
+  <img class="tw-w-full hover:tw-scale-110 tw-transition tw-ease-in-out cursor-pointer" @click="dialog=true"  :src="post.imageUrl" style="height:160px;" alt="Sunset in the mountains">
+</router-link>
+  <div class="tw-px-6 tw-py-4">
+  <div class="tw-flex tw-justify-between">
+    <div class="tw-font-bold tw-text-xl tw-mb-2 tw-flex tw-items-center"><div>{{post.title}}</div>
+    <q-icon name="verified" class="tw-ml-2 tw-text-sky-400"></q-icon>
+    </div>
+    <div class="tw-flex tw-justify-center tw-items-center">
+    <q-icon size="xs" color="grey" name="favorite"></q-icon>
+    <div class="tw-ml-1">
+    96
+    </div>
+    </div>
+    </div>
+    <p class="tw-text-gray-700 tw-text-base">
+      {{post.description}}
+    </p>
+  </div>
+<div class="tw-px-6 tw-pt-4 ">
+<q-chip outline color="primary">
+<q-icon name="check_circle"></q-icon><span class="tw-ml-1">Free</span>
+</q-chip>
+</div>
+  <div class="tw-px-6 tw-pt-4 tw-pb-2">
+    <span class="tw-inline-block tw-bg-gray-200 tw-rounded-full tw-px-3 tw-py-1 tw-text-sm tw-font-semibold tw-text-gray-700 tw-mr-2 tw-mb-2">provisioning</span>
+    <span class="tw-inline-block tw-bg-gray-200 tw-rounded-full tw-px-3 tw-py-1 tw-text-sm tw-font-semibold tw-text-gray-700 tw-mr-2 tw-mb-2">automation</span>
+  </div>
+<div class="tw-flex tw-justify-around tw-mt-3 tw-mb-4">
+          <div class="tw-w-32 tw-h-10 tw-px-5 tw-rounded-md tw-flex tw-justify-center tw-items-center " style="cursor:pointer;background:#10A5E9;">
+            <q-icon name="pin_invoke" color="white" size="24px" class="tw-my-1 tw-mt-2 tw-mr-1"/>
+          </div>
+          <div class="tw-border tw-border-2 tw-w-32 tw-h-10 tw-rounded-md tw-flex tw-justify-center tw-items-center" style="cursor:pointer; border-color: #10A5E9;">
+            <q-icon name="favorite" color="#10A5E9" style="color:#10A5E9" size="24px" class="tw-my-1 tw-mr-1"/>
+          </div>
         </div>
+</div>
       </div>
       <div class="tw-py-2 md:tw-py-4"></div>
     </div>
@@ -83,7 +112,7 @@ const posts = [
     href: '#',
     category: { name: 'Article', href: '#' },
     description:
-      'Writesonic is an AI writer that creates SEO-friendly content for blogs, Facebook ads, Google ads, and Shopify for free. Our paraphrasing tool lets you rephrase entire articles instantly.',
+      'Writesonic is an AI writer that creates SEO-friendly content for blogs, Facebook ads, ...',
     date: 'Mar 16, 2020',
     datetime: '2020-03-16',
     imageUrl:

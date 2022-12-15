@@ -2,33 +2,121 @@
   <q-layout view="lHh Lpr lff" class="">
     <q-header bordered class="tw-bg-white text-black flex justify-center" >
       <div class="tw-container" >
-        <q-toolbar class="">
-          <q-btn icon="menu" flat class="q-px-xs sm:tw-hidden" >
-            <q-menu>
-              <q-list style="min-width: 100px">
-                <q-item v-for="item in navigation.main" :key="item.name" clickable v-close-popup>
-                  <q-item-section avatar>
-                    <q-icon color="black" :name="item.icon" />
-                  </q-item-section>
-                  <q-item-section @click="$router.push(item.href)">{{item.name}}</q-item-section>
-                </q-item>
-              </q-list>
-            </q-menu>
-          </q-btn>
-          <q-img src="dev_icon.svg" class="tw-h-10 tw-w-10 cursor-pointer tw-hidden sm:tw-inline-block" @click="$router.push('/')" />
-          <q-toolbar-title class="text-bold cursor-pointer sm:tw-hidden md:tw-inline-block" @click="$router.push('/')">
-            MyDevTools
-          </q-toolbar-title>
-          <div class="sm:tw-grow md:tw-hidden"></div>
-          <a href="/your-favourites" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Your Favourites</a>
-          <a href="/discover" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Discover</a>
-          <a href="/submit-tool" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Submit</a>
-          <a href="/blog" class="tw-text-md text-bold q-mx-md hover:tw-text-sky-600 tw-transition-colors tw-ease-in-out q-py-lg tw-hidden sm:tw-inline-block">Blog</a>
-          <q-btn rounded class="tw-text-md q-py-none q-px-sm q-mx-sm bg-white" text-color="black" no-caps  >
-            <img src="google.svg" class="tw-h-6 tw-w-6 q-mr-sm" />
-            <span class="text-bold">Login</span>
-          </q-btn>
-        </q-toolbar>
+<nav class="tw-bg-white tw-shadow">
+  <div class="tw-mx-auto tw-max-w-7xl tw-px-4 sm:tw-px-6 lg:tw-px-8">
+    <div class="tw-flex tw-h-16 tw-justify-between">
+      <div class="tw-flex">
+        <div class="tw-flex tw-flex-shrink-0 tw-items-center">
+          <img class="tw-block tw-h-8 tw-w-auto lg:tw-hidden" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+          <img class="tw-hidden tw-h-8 tw-w-auto lg:tw-block" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company">
+        </div>
+        <div class="tw-hidden sm:tw-ml-6 sm:tw-flex sm:tw-space-x-8">
+          <!-- Current: "tw-border-indigo-500 tw-text-gray-900", Default: "tw-border-transparent tw-text-gray-500 hover:tw-border-gray-300 hover:tw-text-gray-700" -->
+          <a href="#" class="tw-inline-flex tw-items-center tw-border-b-2 tw-border-indigo-500 tw-px-1 tw-pt-1 tw-text-sm tw-font-medium tw-text-gray-900">Submit Platform</a>
+          <a href="#" class="tw-inline-flex tw-items-center tw-border-b-2 tw-border-transparent tw-px-1 tw-pt-1 tw-text-sm tw-font-medium tw-text-gray-500 hover:tw-border-gray-300 hover:tw-text-gray-700">Blog</a>
+          <a href="#" class="tw-inline-flex tw-items-center tw-border-b-2 tw-border-transparent tw-px-1 tw-pt-1 tw-text-sm tw-font-medium tw-text-gray-500 hover:tw-border-gray-300 hover:tw-text-gray-700">About</a>
+          <a href="#" class="tw-inline-flex tw-items-center tw-border-b-2 tw-border-transparent tw-px-1 tw-pt-1 tw-text-sm tw-font-medium tw-text-gray-500 hover:tw-border-gray-300 hover:tw-text-gray-700">Contact</a>
+        </div>
+      </div>
+      <div class="tw-hidden sm:tw-ml-6 sm:tw-flex sm:tw-items-center">
+        <button type="button" class="tw-rounded-full tw-bg-white tw-p-1 tw-text-gray-400 hover:tw-text-gray-500 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2">
+          <span class="tw-sr-only">View notifications</span>
+          <!-- Heroicon name: outline/bell -->
+          <svg class="tw-h-6 tw-w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+          </svg>
+        </button>
+
+        <!-- Profile dropdown -->
+        <div class="tw-relative tw-ml-3">
+          <div>
+            <button @click="popup=!popup" type="button" class="tw-flex tw-rounded-full tw-bg-white tw-text-sm focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+              <span class="tw-sr-only">Open user menu</span>
+              <img class="tw-h-8 tw-w-8 tw-rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+            </button>
+          </div>
+
+          <!--
+            Dropdown menu, show/hide based on menu state.
+
+            Entering: "tw-transition tw-ease-out tw-duration-200"
+              From: "tw-transform tw-opacity-0 tw-scale-95"
+              To: "tw-transform tw-opacity-100 tw-scale-100"
+            Leaving: "tw-transition tw-ease-in tw-duration-75"
+              From: "tw-transform tw-opacity-100 tw-scale-100"
+              To: "tw-transform tw-opacity-0 tw-scale-95"
+          -->
+          <div v-if="popup" class="tw-absolute tw-right-0 tw-z-10 tw-mt-2 tw-w-48 tw-origin-top-right tw-rounded-md tw-bg-white tw-py-1 tw-shadow-lg tw-ring-1 tw-ring-black tw-ring-opacity-5 focus:tw-outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+            <!-- Active: "tw-bg-gray-100", Not Active: "" -->
+            <a href="#" class="tw-block tw-px-4 tw-py-2 tw-text-sm tw-text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
+            <a href="#" class="tw-block tw-px-4 tw-py-2 tw-text-sm tw-text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
+            <a href="#" class="tw-block tw-px-4 tw-py-2 tw-text-sm tw-text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+          </div>
+        </div>
+      </div>
+      <div class="tw--mr-2 tw-flex tw-items-center sm:tw-hidden">
+        <!-- Mobile menu button -->
+        <button type="button" class="tw-inline-flex tw-items-center tw-justify-center tw-rounded-md tw-p-2 tw-text-gray-400 hover:tw-bg-gray-100 hover:tw-text-gray-500 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-inset focus:tw-ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="tw-sr-only">Open main menu</span>
+          <!--
+            Icon when menu is closed.
+
+            Heroicon name: outline/bars-3
+
+            Menu open: "tw-hidden", Menu closed: "tw-block"
+          -->
+          <svg class="tw-block tw-h-6 tw-w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <!--
+            Icon when menu is open.
+
+            Heroicon name: outline/x-mark
+
+            Menu open: "tw-block", Menu closed: "tw-hidden"
+          -->
+          <svg class="tw-hidden tw-h-6 tw-w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div class="sm:tw-hidden" id="mobile-menu">
+    <div class="tw-space-y-1 tw-pt-2 tw-pb-3">
+      <!-- Current: "tw-bg-indigo-50 tw-border-indigo-500 tw-text-indigo-700", Default: "tw-border-transparent tw-text-gray-500 hover:tw-bg-gray-50 hover:tw-border-gray-300 hover:tw-text-gray-700" -->
+      <a href="#" class="tw-block tw-border-l-4 tw-border-indigo-500 tw-bg-indigo-50 tw-py-2 tw-pl-3 tw-pr-4 tw-text-base tw-font-medium tw-text-indigo-700">Dashboard</a>
+      <a href="#" class="tw-block tw-border-l-4 tw-border-transparent tw-py-2 tw-pl-3 tw-pr-4 tw-text-base tw-font-medium tw-text-gray-500 hover:tw-border-gray-300 hover:tw-bg-gray-50 hover:tw-text-gray-700">Team</a>
+      <a href="#" class="tw-block tw-border-l-4 tw-border-transparent tw-py-2 tw-pl-3 tw-pr-4 tw-text-base tw-font-medium tw-text-gray-500 hover:tw-border-gray-300 hover:tw-bg-gray-50 hover:tw-text-gray-700">Projects</a>
+      <a href="#" class="tw-block tw-border-l-4 tw-border-transparent tw-py-2 tw-pl-3 tw-pr-4 tw-text-base tw-font-medium tw-text-gray-500 hover:tw-border-gray-300 hover:tw-bg-gray-50 hover:tw-text-gray-700">Calendar</a>
+    </div>
+    <div class="tw-border-t tw-border-gray-200 tw-pt-4 tw-pb-3">
+      <div class="tw-flex tw-items-center tw-px-4">
+        <div class="tw-flex-shrink-0">
+          <img class="tw-h-10 tw-w-10 tw-rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+        </div>
+        <div class="tw-ml-3">
+          <div class="tw-text-base tw-font-medium tw-text-gray-800">Tom Cook</div>
+          <div class="tw-text-sm tw-font-medium tw-text-gray-500">tom@example.com</div>
+        </div>
+        <button type="button" class="tw-ml-auto tw-flex-shrink-0 tw-rounded-full tw-bg-white tw-p-1 tw-text-gray-400 hover:tw-text-gray-500 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-indigo-500 focus:tw-ring-offset-2">
+          <span class="tw-sr-only">View notifications</span>
+          <!-- Heroicon name: outline/bell -->
+          <svg class="tw-h-6 tw-w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+          </svg>
+        </button>
+      </div>
+      <div class="tw-mt-3 tw-space-y-1">
+        <a href="#" class="tw-block tw-px-4 tw-py-2 tw-text-base tw-font-medium tw-text-gray-500 hover:tw-bg-gray-100 hover:tw-text-gray-800">Your Profile</a>
+        <a href="#" class="tw-block tw-px-4 tw-py-2 tw-text-base tw-font-medium tw-text-gray-500 hover:tw-bg-gray-100 hover:tw-text-gray-800">Settings</a>
+        <a href="#" class="tw-block tw-px-4 tw-py-2 tw-text-base tw-font-medium tw-text-gray-500 hover:tw-bg-gray-100 hover:tw-text-gray-800">Sign out</a>
+      </div>
+    </div>
+  </div>
+</nav>
       </div>
       
     </q-header>
