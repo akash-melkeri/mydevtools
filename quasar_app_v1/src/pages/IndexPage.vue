@@ -3,7 +3,7 @@
 <div class="tw-w-full">
 <div class="tw-relative tw-px-4 tw-py-16 sm:tw-px-6 sm:tw-py-24 lg:tw-py-32 lg:tw-px-8 tw-bg-gradient-to-r tw-from-purple-800 tw-to-indigo-700">
             <h1 class="tw-text-center tw-text-4xl tw-font-bold tw-tracking-tight sm:tw-text-5xl lg:tw-text-6xl">
-              <span class="tw-block tw-text-white">Platform Hunt</span>
+              <span class="tw-block tw-text-white">Platform s</span>
             </h1>
             <p class="tw-mx-auto tw-mt-6 tw-max-w-lg tw-text-center tw-text-xl tw-text-indigo-200 sm:tw-max-w-3xl">THE LARGEST AI TOOLS DIRECTORY, UPDATED DAILY.</p>
           </div>
