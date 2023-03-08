@@ -7,7 +7,28 @@ import axios from 'axios'
 // good idea to move this instance creation inside of the
 // "export default () => {}" function below (which runs individually
 // for each client)
-const api = axios.create({ baseURL: 'https://api.example.com' })
+// axios.defaults.withCredentials = true
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+const api = axios.create()
+
+// api.interceptors.response.use(
+// (response) => {
+//   return response;
+// },
+// (error) => {
+//   if (error.response.status === 401) {
+//     router.replace('/login');
+//     return new Promise(() => {});
+//   }
+//   else
+//     return Promise.reject(error);
+// });
+
+// axios.interceptors.request.use((request)=>{
+//   request.headers['X-CSRFToken'] = Cookies.get('_csrf_token');
+//   return request;
+// });
+
 
 export default boot(({ app }) => {
   // for use inside Vue files (Options API) through this.$axios and this.$api

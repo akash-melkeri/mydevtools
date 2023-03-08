@@ -75,9 +75,8 @@
 
 <script>
 import { defineComponent,ref } from 'vue'
+import axios from 'axios'
 const posts = [
-
-
   {
     title: 'Writesonic',
     href: '#',
@@ -159,6 +158,22 @@ export default defineComponent({
         value:'design'
       }],
     }
+  },
+  created(){
+    console.log("created2");
+    axios.get('/api/load/')
+      .then(function (response) {
+        if(response.data){
+          console.log("response ",response.data);
+          // updateSongs(response.data)
+        }
+      })
+      .catch(function (error) {
+        console.error("error ",error);
+      }).finally(()=>{
+        console.log("finally");
+        // updateLoading('idle');
+      });
   }
 })
 </script>

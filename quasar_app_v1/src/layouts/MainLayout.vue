@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lff" class="">
+  <q-layout view="hHh Lpr lff" class="">
     <q-header bordered class="tw-bg-white text-black flex justify-center" >
       <div class="tw-container" >
         <q-toolbar class="">
@@ -32,6 +32,42 @@
       </div>
       
     </q-header>
+    <q-page-sticky position="left" class="tw-z-10" :offset="[leftDrawerOpen?318:18, 18]">
+      <q-fab fab icon="filter_list" active-icon="filter_list_off" color="primary" @click="leftDrawerOpen = !leftDrawerOpen" />
+    </q-page-sticky>
+    <q-drawer
+      overlay
+      v-model="leftDrawerOpen"
+      :width="300"
+      :breakpoint="700"
+      bordered
+      class="bg-grey-2 text-grey-8"
+    >
+    
+      <q-scroll-area class="fit">{{ categories[0] }}
+        <q-list>
+          <template v-for="(category, index) in categories" :key="category.name">
+            <q-item clickable v-ripple @click="()=>{category.selected = !category.selected}">
+              <q-item-section class=" text-bold">
+                {{ category.name }}
+              </q-item-section>
+              <q-item-section class="text-white text-bold " align="right" avatar>
+                <q-checkbox class="text-white" v-model="category.selected" dense/>
+              </q-item-section>
+            </q-item>
+            <q-item class="q-pl-xl" clickable v-ripple v-for="sub,index2 in category.sub" :key="sub.name" @click="sub.selected = !sub.selected">
+              <q-item-section class=" text-">
+                {{ sub.name }}
+              </q-item-section>
+              <q-item-section class="text-white text-bold " align="right" avatar>
+                <q-checkbox class="text-white" v-model="sub.selected" dense />
+              </q-item-section>
+            </q-item>
+            <q-separator class="q-py-none" />
+          </template>
+        </q-list>
+      </q-scroll-area>
+    </q-drawer>
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -56,6 +92,204 @@
 
 <script>
 import { defineComponent, ref,h } from 'vue'
+
+const categories = [{
+  name:"Orchestration & Management",
+  selected:false,
+  sub : [{
+    name:"API Gateway",
+    selected:false
+  },{
+    name:"Scheduling & Orchestration",
+    selected:false
+  },{
+    name:"Service Proxy",
+    selected:false
+  },{
+    name:"Coordination & Service Discovery",
+    selected:false
+  },{
+    name:"Service Mesh",
+    selected:false
+  },{
+    name:"Remote Procedure Call",
+    selected:false
+  }]
+},{
+  name:"Serverless",
+  selected:false,
+  sub : [{
+    name:"Framework",
+    selected:false
+  },{
+    name:"Security",
+    selected:false
+  },{
+    name:"Tools",
+    selected:false
+  },{
+    name:"Hosted Platform",
+    selected:false
+  },{
+    name:"Installable Platform",
+    selected:false
+  }]
+},{
+  name:"Observability and Analysis",
+  selected:false,
+  sub : [{
+    name:"Chaos Engineering",
+    selected:false
+  },{
+    name:"Logging",
+    selected:false
+  },{
+    name:"Continuous Optimization",
+    selected:false
+  },{
+    name:"Monitoring",
+    selected:false
+  },{
+    name:"Tracing",
+    selected:false
+  }]
+},{
+  name:"Provisioning",
+  selected:false,
+  sub : [{
+    name:"Container Registry",
+    selected:false
+  },{
+    name:"Security & Compliance",
+    selected:false
+  },{
+    name:"Automation & Configuration",
+    selected:false
+  },{
+    name:"Key Management",
+    selected:false
+  }]
+},{
+  name:"Platform",
+  selected:false,
+  sub : [{
+    name:"Certified Kubernetes - Hosted",
+    selected:false
+  },{
+    name:"Certified Kubernetes - Distribution",
+    selected:false
+  },{
+    name:"PaaS/Container Service",
+    selected:false
+  },{
+    name:"Certified Kubernetes - Installer",
+    selected:false
+  }]
+},{
+  name:"App Definition and Development",
+  selected:false,
+  sub : [{
+      name:"Application Definition & Image Build",
+      selected:false
+    },{
+      name:"Streaming & Messaging",
+      selected:false
+    },{
+      name:"Continuous Integration & Delivery",
+      selected:false
+    },{
+      name:"Database",
+      selected:false
+    }]
+},{
+  name:"Wasm",
+  selected:false,
+  sub : [{
+    name:"Toolchain",
+    selected:false
+  },{
+    name:"Specifications",
+    selected:false
+  },{
+    name:"Installable Platform",
+    selected:false
+  },{
+    name:"Debugging and Observability",
+    selected:false
+  },{
+    name:"Packaging, Registries & Application Delivery",
+    selected:false
+  },{
+    name:"Runtime",
+    selected:false
+  }]
+},{
+  name:"CNCF Members",
+  selected:false,
+  sub : [{
+      name:"Platinum",
+      selected:false
+    },{
+      name:"Gold",
+      selected:false
+    },{
+      name:"Silver",
+      selected:false
+    },{
+      name:"Academic",
+      selected:false
+    },{
+      name:"Nonprofit",
+      selected:false
+    },{
+      name:"End User Supporter",
+      selected:false
+    }]
+},{
+  name:"Runtime",
+  selected:false,
+  sub : [{
+      name:"Container Runtime",
+      selected:false
+    },{
+      name:"Cloud Native Network",
+      selected:false
+    },{
+      name:"Cloud Native Storage",
+      selected:false
+    }]
+},{
+  name:"Special",
+  selected:false,
+  sub : [{
+      name:"Kubernetes Certified Service Provider",
+      selected:false
+    },{
+      name:"Kubernetes Training Partner",
+      selected:false
+    },{
+      name:"Certified CNFs",
+      selected:false
+    }]
+}]
+
+const menuList = [
+  {
+    icon: 'inbox',
+    label: 'Inbox',
+    separator: true
+  },
+  {
+    icon: 'send',
+    label: 'Outbox',
+    separator: false
+  },
+  {
+    icon: 'delete',
+    label: 'Trash',
+    separator: false
+  }
+]
 
 const navigation = {
 
@@ -144,10 +378,14 @@ export default defineComponent({
 
   setup () {
     const leftDrawerOpen = ref(false)
-
+    
     return {
+      selected_categories:ref([]),
+      selected_main_categories:ref([]),
       navigation,
+      menuList,
       leftDrawerOpen,
+      categories,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
       }

@@ -1,0 +1,21 @@
+[build]
+  functions = "functions"
+  base = "quasar_app_v1"
+  publish = "dist"
+  command = "quasar build"
+
+[dev]
+  functions = "functions"
+  port = 8888
+  base = "/quasar_app_v1/"
+  command = "npm start"
+  targetPort = 9090
+  publish = "dist"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = '/api/*'
+  to = '/.netlify/functions/:splat'
+  status = 200
