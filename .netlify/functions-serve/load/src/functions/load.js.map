@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": ["../../home/akashmelkeri/not_workspace/mydevtools/functions/load.js"],
+  "sourceRoot": "/tmp/tmp-22050-NFWwHfn2wfmv",
+  "sourcesContent": ["\n\nexports.handler = async function (event, context) {\n  let to_return = []\n  console.log(event);\n  return {\n    statusCode: 200,\n    body: JSON.stringify(to_return ),\n  };\n};"],
+  "mappings": ";AAEA,QAAQ,UAAU,eAAgB,OAAO,SAAS;AAChD,MAAI,YAAY,CAAC;AACjB,UAAQ,IAAI,KAAK;AACjB,SAAO;AAAA,IACL,YAAY;AAAA,IACZ,MAAM,KAAK,UAAU,SAAU;AAAA,EACjC;AACF;",
+  "names": []
+}
