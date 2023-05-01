@@ -1,72 +1,39 @@
 <template>
-  <q-page class="flex justify-center">
-    <div class="tw-container column items-center bg-white">
-      <div class="flex justify-between items-center tw-w-full tw-px-4 md:tw-px-8 tw-mt-4 md:tw-mt-8">
-        <q-btn flat icon="arrow_back_ios" label="Back" @click="$router.back()" />
-        <div class="tw-flex tw-items-center tw-justify-center">
-          <q-btn flat icon="bookmark_add" class="tw-flex-grow tw-flex-grow tw-bg-gradient-to-r tw-from-cyan-500 tw-to-blue-500 text-white">
-            <span class="q-px-sm tw-hidden md:tw-inline-block">Add to Favourites</span>
-          </q-btn>
-          <div class="q-px-sm q-mx-xs"></div>
-          <q-btn outline icon="email" color="light-blue-6" class="tw-flex-grow">
-            <span class="q-px-sm text-bold tw-hidden md:tw-inline-block">Suggest edit</span>
-          </q-btn>
-          <!-- <q-btn outline icon="bookmark_remove" color="light-blue-6" class="tw-flex-grow">
-            <span class="q-px-sm text-bold">Remove</span>
-          </q-btn> -->
+    <div>
+
+<div class="tw-overflow-hidden tw-bg-gray-50 tw-py-16">
+  <div class="tw-flex tw-justify-between tw-mx-auto tw-max-w-7xl tw-space-y-8 tw-px-4 sm:tw-px-6 lg:tw-px-8">
+  <div class="tw-w-1/2">
+    <div class="tw-mx-auto tw-max-w-prose tw-text-base lg:tw-max-w-none">
+      <h2 class="tw-text-lg tw-font-semibold tw-text-sky-400">Tools</h2>
+      <p class="tw-mt-2 tw-text-3xl tw-font-bold tw-leading-8 tw-tracking-tight tw-text-gray-900 sm:tw-text-4xl tw-flex">Writesonic<q-icon class="tw-ml-1" size="sm" name="pin_invoke"></q-icon></p>
+    </div>
+    <div class="tw-relative tw-z-10 tw-mx-auto tw-max-w-prose tw-text-base lg:tw-mx-0 lg:tw-max-w-5xl lg:tw-pr-10">
+      <p class="tw-text-lg tw-text-gray-500 tw-mt-5">Writesonic is an AI writer that creates SEO-friendly content for blogs, Facebook ads, Google ads, and Shopify for free. Our paraphrasing tool lets you rephrase entire articles instantly.</p>
+            <p class="tw-text-lg tw-text-gray-500 tw-mt-5">Writesonic is an AI writer that creates SEO-friendly content for blogs, Facebook ads, Google ads, and Shopify for free. Our paraphrasing tool lets you rephrase entire articles instantly.</p>
+    </div>
+    <div class=" tw-mt-10">
+      <div class="tw-relative tw-z-10">
+        <div class="tw-prose prose-indigo tw-mx-auto tw-text-gray-500 lg:tw-max-w-none">
+          <p class="tw-flex"> <q-icon name="verified" size="sm" class="tw-text-sky-400"></q-icon><p class="tw-ml-1">The Platform Hunt team has used this tool and recommends it</p>.</p>
+          <p class="tw-flex tw-mt-3">     <q-icon name="favorite" size="sm" class="tw-text-red-400"></q-icon><p class="tw-ml-1">87 people have added this tool to their favorites.</p>.</p>
+          <p class="tw-flex tw-mt-3"> <q-icon name="today" size="sm" class="tw-text-gray-400"></q-icon><p class="tw-ml-1">Added on November 4th</p>.</p>
         </div>
-      </div>
-      <div class="tw-flex tw-flex-col tw-overflow-hidden tw-mt-4 md:tw-mt-8 tw-px-4 md:tw-px-8" @click="$router.push({name:'tool',params:{tool_name:'mydevtools'}})">
-        <div class="tw-flex-shrink-0 flex tw-flex-col md:tw-flex-row bg-white  overflow-hidden">
-          <img class="tw-h-64 md:tw-h-96 tw-w-full md:tw-w-1/2 tw-object-cover tw-rounded-lg" :src="post.imageUrl" alt="" />
-          <div class="tw-w-full md:tw-w-1/2 tw-px-4 md:tw-px-9 tw-py-4 md:tw-py-0" >
-            <div class="flex items-center justify-between">
-              <div class=" flex items-center cursor-pointer hover:tw-text-blue-500">
-                <h1 class="tw-text-4xl text-bold tw-mr-2">{{post.title}}</h1>
-                <q-icon name="open_in_new" size="md"/>
               </div>
-              <div class="flex items-center">
-                <q-tooltip>120 people favorited this tool</q-tooltip>
-                <q-icon name="book" color="blue-grey-4" size="sm" /> 
-                <span class="text-blue-grey-4 text-bold cursor-inherit">120</span>
-              </div>
-            </div>
-            <div>
-              badge
-            </div>
-            <div>
-              <p class="tw-mt-3 tw-text-base tw-text-gray-500">{{ post.description }}</p>
-            </div>
-            <q-separator class="q-my-md" />
-            <div>
-              <q-item>
-<p class="tw-flex"> <q-icon name="verified" size="sm" class="tw-text-sky-400"></q-icon><p class="tw-ml-1">The Platform Hunt team has used this tool and recommends it</p>.</p>
-              </q-item>
-              <q-item>
-                <p class="tw-flex ">     <q-icon name="favorite" size="sm" class="tw-text-red-400"></q-icon><p class="tw-ml-1">87 people have added this tool to their favorites.</p>.</p>
-              </q-item>
-              <q-item>
-               <p class="tw-flex"> <q-icon name="today" size="sm" class="tw-text-gray-400"></q-icon><p class="tw-ml-1">Added on November 4th</p>.</p>
-              </q-item>
-            </div>
-            <div class="tw-mt-4 tw-flex tw-justify-center tw-space-x-6">
-              <a v-for="item in social" :key="item.name" :href="item.href" class="tw-text-gray-400 hover:tw-text-gray-500">
-                <span class="tw-sr-only">{{ item.name }}</span>
-                <component :is="item.icon" class="tw-h-6 tw-w-6" aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
-      <div class="flex items-center tw-w-full tw-mt-4 md:tw-mt-8">
-        <div class="tw-grow tw-h-1 tw-px-4 md:tw-px-8">
-          <q-separator class=""/>
+       <div class="tw-mt-6 tw-flex tw-text-base">
+         <q-btn label="ADD to favourites" class="tw-bg-indigo-600 tw-rounded-md tw-text-white"></q-btn>
+         <q-btn class="tw-ml-4 tw-text-indigo-600 tw-rounded-md" label="suggest an Edit"></q-btn>
+
         </div>
-        <div class="text-blue-6 text-bold">Alternative AI Tools for Writesonic</div>
-        <div class="tw-grow tw-h-1 tw-px-4 md:tw-px-8">
-          <q-separator class=""/>
-        </div>
-      </div>
+    </div>
+    <div>
+          <img class="tw-h-64 md:tw-h-96 tw-w-full  tw-object-cover tw-rounded-lg" :src="post.imageUrl" alt="" />
+    </div>
+  </div>
+ <div class="tw-flex tw-justify-center tw-text-xl tw-font-semibold">
+  Alternative AI tools for Writesonic
+  </div>
   <div class="md:tw-flex sm:tw-flex-row xs:tw-flex-col xs:tw-justify-center tw-mt-5 tw-justify-center">
 <div class="tw-ml-3 tw-max-w-xs tw-rounded-lg tw-overflow-hidden tw-border tw-border-gray tw-mr-16">
   <img class="tw-w-full hover:tw-scale-110 tw-transition tw-ease-in-out cursor-pointer" @click="dialog=true"  :src="post.imageUrl" style="height:160px;" alt="Sunset in the mountains">
@@ -180,10 +147,10 @@
 
       
   </div>
-    </div>
-  </q-page>
-</template>
+</div>
 
+    </div>
+</template>
 <script>
 import { defineComponent,ref,h } from 'vue'
 const post = 
@@ -297,4 +264,3 @@ export default defineComponent({
   }
 })
 </script>
-  
